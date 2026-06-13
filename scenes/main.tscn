@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://bjyv5g07ylf2x"]
 
+[ext_resource type="PackedScene" uid="uid://dxa02001hxiq1" path="res://scenes/border.tscn" id="1_o5qli"]
+
 [node name="Main" type="Node" unique_id=753195905]
+
+[node name="Border" parent="." unique_id=125141497 instance=ExtResource("1_o5qli")]
