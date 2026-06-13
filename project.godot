@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Arkanoid"
+run/main_scene="uid://bjyv5g07ylf2x"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1280
 
 [dotnet]
 
