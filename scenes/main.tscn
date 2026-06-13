@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bjyv5g07ylf2x"]
+
+[ext_resource type="Script" uid="uid://deaqfagywy702" path="res://scripts/Main.cs" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://dxa02001hxiq1" path="res://scenes/border.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://crqtvu11e24n8" path="res://scenes/player.tscn" id="3_sugp2"]
+
+[node name="Main" type="Node" unique_id=753195905 node_paths=PackedStringArray("Player", "StartPosition")]
+script = ExtResource("1_0wfyh")
+Player = NodePath("Player")
+StartPosition = NodePath("StartPosition")
+
+[node name="Border" parent="." unique_id=125141497 instance=ExtResource("1_o5qli")]
+
+[node name="StartPosition" type="Marker2D" parent="." unique_id=226131959]
+position = Vector2(960, 1184)
+
+[node name="Player" parent="." unique_id=2102616782 instance=ExtResource("3_sugp2")]
+Speed = 1000
