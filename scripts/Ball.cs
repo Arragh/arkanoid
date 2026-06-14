@@ -16,14 +16,16 @@ public partial class Ball : RigidBody2D
 		// Отключить затухание скорости
 		LinearDamp = 0;
 		LinearDampMode = DampMode.Replace;
+	}
 
-		var physicsMaterial = new PhysicsMaterial
+	public override void _IntegrateForces(PhysicsDirectBodyState2D state)
+	{
+		if (state.LinearVelocity.LengthSquared() > 0.1f)
 		{
-			Bounce = 1,
-			Friction = 0
-		};
+			state.LinearVelocity = state.LinearVelocity.Normalized() * Speed;
+		}
 
-		PhysicsMaterialOverride = physicsMaterial;
+		base._IntegrateForces(state);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
