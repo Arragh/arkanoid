@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dxa02001hxiq1" path="res://scenes/border.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://crqtvu11e24n8" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dt2q28eu1qwxk" path="res://scenes/ball.tscn" id="4_jyhfs"]
+[ext_resource type="PhysicsMaterial" uid="uid://bw7rh2tnyaxyt" path="res://resources/perfect_bounce.tres" id="5_tbgi4"]
 
 [node name="Main" type="Node" unique_id=753195905 node_paths=PackedStringArray("Player", "PlayerStartPosition", "Ball", "BallStartPosition")]
 script = ExtResource("1_0wfyh")
@@ -22,7 +23,8 @@ Speed = 1000
 position = Vector2(960, 1184)
 
 [node name="Ball" parent="." unique_id=547804763 instance=ExtResource("4_jyhfs")]
-Speed = 800
+physics_material_override = ExtResource("5_tbgi4")
+Speed = 1500
 
 [node name="BallStartPosition" type="Marker2D" parent="." unique_id=1333415108]
 position = Vector2(960, 704)
