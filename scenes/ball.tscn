@@ -1,10 +1,10 @@
-[gd_scene format=4 uid="uid://crqtvu11e24n8"]
+[gd_scene format=3 uid="uid://dt2q28eu1qwxk"]
 
-[ext_resource type="Texture2D" uid="uid://bp7ujt84r8oyb" path="res://assets/Tiles.png" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://chwondd8hw1ml" path="res://scripts/Player.cs" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bp7ujt84r8oyb" path="res://assets/Tiles.png" id="1_7s4qf"]
+[ext_resource type="Script" uid="uid://cdovjgfe1ose3" path="res://scripts/Ball.cs" id="1_cxlvu"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g2els"]
-texture = ExtResource("1_3vyb7")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cxlvu"]
+texture = ExtResource("1_7s4qf")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -427,20 +427,18 @@ texture = ExtResource("1_3vyb7")
 0:28/0 = 0
 1:28/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_qhqgy"]
-sources/0 = SubResource("TileSetAtlasSource_g2els")
+[sub_resource type="TileSet" id="TileSet_f7cbr"]
+sources/0 = SubResource("TileSetAtlasSource_cxlvu")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
-radius = 32.0
-height = 320.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_4dx81"]
+radius = 16.0
 
-[node name="Player" type="StaticBody2D" unique_id=1873849355]
-script = ExtResource("1_g2els")
+[node name="Ball" type="RigidBody2D" unique_id=547804763]
+script = ExtResource("1_cxlvu")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1561345124]
-tile_map_data = PackedByteArray("AAAAAP7/AAAPABEAAAAAAP//AAAPABIAAAAAAAAAAAAPABMAAAAAAAEAAAAPABQAAAABAP7/AAAQABEAAAABAP//AAAQABIAAAABAAAAAAAQABMAAAABAAEAAAAQABQAAAACAP7/AAARABEAAAACAP//AAARABIAAAACAAAAAAARABMAAAACAAEAAAARABQAAAADAP7/AAASABEAAAADAP//AAASABIAAAADAAAAAAASABMAAAADAAEAAAASABQAAAAEAP7/AAAPABEAAAAEAP//AAAPABIAAAAEAAAAAAAPABMAAAAEAAEAAAAPABQAAAAFAP7/AAAQABEAAAAFAP//AAAQABIAAAAFAAAAAAAQABMAAAAFAAEAAAAQABQAAAAGAP7/AAARABEAAAAGAP//AAARABIAAAAGAAAAAAARABMAAAAGAAEAAAARABQAAAAHAP7/AAASABEAAAAHAP//AAASABIAAAAHAAAAAAASABMAAAAHAAEAAAASABQAAAD8//7/AAAPABEAAAD8////AAAPABIAAAD8/wAAAAAPABMAAAD8/wEAAAAPABQAAAD9//7/AAAQABEAAAD9////AAAQABIAAAD9/wAAAAAQABMAAAD9/wEAAAAQABQAAAD+//7/AAARABEAAAD+////AAARABIAAAD+/wAAAAARABMAAAD+/wEAAAARABQAAAD///7/AAASABEAAAD/////AAASABIAAAD//wAAAAASABMAAAD//wEAAAASABQAAAD4//7/AAAPABEAAAD4////AAAPABIAAAD4/wAAAAAPABMAAAD4/wEAAAAPABQAAAD5//7/AAAQABEAAAD5////AAAQABIAAAD5/wAAAAAQABMAAAD5/wEAAAAQABQAAAD6//7/AAARABEAAAD6////AAARABIAAAD6/wAAAAARABMAAAD6/wEAAAARABQAAAD7//7/AAASABEAAAD7////AAASABIAAAD7/wAAAAASABMAAAD7/wEAAAASABQAAAD2//7/AAAPAA0AAAD2////AAAPAA4AAAD2/wAAAAAPAA8AAAD2/wEAAAAPABAAAAD3//7/AAAQAA0AAAD3////AAAQAA4AAAD3/wAAAAAQAA8AAAD3/wEAAAAQABAAAAAIAP7/AAARAA0AAAAIAP//AAARAA4AAAAIAAAAAAARAA8AAAAIAAEAAAARABAAAAAJAP7/AAASAA0AAAAJAP//AAASAA4AAAAJAAAAAAASAA8AAAAJAAEAAAASABAAAAA=")
-tile_set = SubResource("TileSet_qhqgy")
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2139609562]
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 19, 0, 13, 0, 0, 0, 255, 255, 0, 0, 0, 0, 19, 0, 14, 0, 0, 0, 0, 0, 255, 255, 0, 0, 20, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 14, 0, 0, 0)
+tile_set = SubResource("TileSet_f7cbr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=371037311]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_dqkch")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=366371611]
+shape = SubResource("CircleShape2D_4dx81")

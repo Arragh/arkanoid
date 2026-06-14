@@ -7,12 +7,19 @@ public partial class Main : Node
 	public Player Player { get; set; }
 
 	[Export]
-	public Marker2D StartPosition { get; set; }
+	public Marker2D PlayerStartPosition { get; set; }
+
+	[Export]
+	public Ball Ball { get; set; }
+
+	[Export]
+	public Marker2D BallStartPosition { get; set; }
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Player.Position = StartPosition.Position;
+		Player.Position = PlayerStartPosition.Position;
+		Ball.Position = BallStartPosition.Position;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
