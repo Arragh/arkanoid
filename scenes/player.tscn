@@ -434,7 +434,7 @@ sources/0 = SubResource("TileSetAtlasSource_g2els")
 radius = 32.0
 height = 320.0
 
-[node name="Player" type="StaticBody2D" unique_id=1873849355]
+[node name="Player" type="StaticBody2D" unique_id=798773134]
 script = ExtResource("1_g2els")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1561345124]
