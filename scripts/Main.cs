@@ -18,8 +18,8 @@ public partial class Main : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Player.Position = PlayerStartPosition.Position;
-		Ball.Position = BallStartPosition.Position;
+		Player.SetStartPosition(PlayerStartPosition.GlobalPosition);
+		Ball.SetStartPosition(BallStartPosition.GlobalPosition);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

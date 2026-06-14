@@ -22,7 +22,13 @@ public partial class Player : StaticBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		float direction = Input.GetAxis("move_left", "move_right");
+		Vector2 velocity = new Vector2(direction * Speed, 0);
 
-		Position += new Vector2(direction * Speed * (float)delta, 0);
+		MoveAndCollide(velocity * (float)delta);
+	}
+
+	public void SetStartPosition(Vector2 startPosition)
+	{
+		GlobalPosition = startPosition;
 	}
 }

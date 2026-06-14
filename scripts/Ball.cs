@@ -30,4 +30,9 @@ public partial class Ball : RigidBody2D
 	public override void _Process(double delta)
 	{
 	}
+
+	public void SetStartPosition(Vector2 startPosition)
+	{
+		GlobalPosition = startPosition;
+	}
 }

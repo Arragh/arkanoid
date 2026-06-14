@@ -15,6 +15,7 @@ BallStartPosition = NodePath("BallStartPosition")
 [node name="Border" parent="." unique_id=125141497 instance=ExtResource("1_o5qli")]
 
 [node name="Player" parent="." unique_id=2102616782 instance=ExtResource("3_sugp2")]
+position = Vector2(960, 1184)
 Speed = 1000
 
 [node name="PlayerStartPosition" type="Marker2D" parent="." unique_id=226131959]
