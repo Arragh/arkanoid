@@ -8,8 +8,14 @@ public partial class Ball : RigidBody2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		// В Godot нулевой угол не как у людей и начинается с 3 часов и прибавляется по часовой
+		// Поэтому делаем против часовой (отрицательный), чтобы смотрело вверх
+		var angle = GD.RandRange(-120, -60);
+		float radians = Mathf.DegToRad(angle);
+		var direction = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
+		LinearVelocity = direction * _speed;
+
 		GravityScale = 0;
-		LinearVelocity = new Vector2(_speed, -_speed);
 		LockRotation = false;
 
 		// Отключить затухание скорости
