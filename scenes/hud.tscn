@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://jpxbig6mmijg"]
+
+[ext_resource type="Script" uid="uid://c42jy0jc3s8si" path="res://scripts/Hud.cs" id="1_ahhtf"]
+[ext_resource type="FontFile" uid="uid://blq0me787ji0a" path="res://fonts/Xolonium-Regular.ttf" id="2_oo0fn"]
+
+[node name="HUD" type="CanvasLayer" unique_id=661432062 node_paths=PackedStringArray("StartButton", "ScoreLabel")]
+script = ExtResource("1_ahhtf")
+StartButton = NodePath("StartButton")
+ScoreLabel = NodePath("ScoreLabel")
+
+[node name="StartButton" type="Button" parent="." unique_id=1189804198]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -100.0
+offset_right = 300.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_oo0fn")
+theme_override_font_sizes/font_size = 64
+text = "START GAME"
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=5987277]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_oo0fn")
+theme_override_font_sizes/font_size = 48
+text = "123"
