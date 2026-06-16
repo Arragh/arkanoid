@@ -32,7 +32,7 @@ public partial class Main : Node
 	{
 		for (int i = 0; i < 16; i++)
 		{
-			for (int j = 0; j < 10; j++)
+			for (int j = 0; j < 5; j++)
 			{
 				var brickScene = ResourceLoader.Load<PackedScene>("res://scenes/brick.tscn");
 				var brick = brickScene.Instantiate<Brick>();
@@ -50,6 +50,7 @@ public partial class Main : Node
 		Ball.SetStartPosition(BallStartPosition.GlobalPosition);
 
 		Hud.StartGame += NewGame;
+		Ball.IncreaseScore += IncreaseScore;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -64,5 +65,11 @@ public partial class Main : Node
 
 		// Ball.SetStartPosition(BallStartPosition.GlobalPosition);
 		Ball.SetSpeed(BallSpeed);
+	}
+
+	private void IncreaseScore()
+	{
+		_score++;
+		Hud.UpdateScore(_score);
 	}
 }

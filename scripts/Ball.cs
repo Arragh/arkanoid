@@ -5,6 +5,9 @@ public partial class Ball : RigidBody2D
 {
 	private int _speed { get; set; } = 1;
 
+	[Signal]
+	public delegate void IncreaseScoreEventHandler();
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -57,6 +60,7 @@ public partial class Ball : RigidBody2D
 		if (body is Brick brick)
 		{
 			brick.Dissapear();
+			EmitSignal(SignalName.IncreaseScore);
 		}
 	}
 }
