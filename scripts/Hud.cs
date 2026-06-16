@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class Hud : CanvasLayer
 {
@@ -9,6 +8,12 @@ public partial class Hud : CanvasLayer
 	[Export]
 	public Label ScoreLabel { get; set; }
 
+	[Export]
+	public Label GameOverLabel { get; set; }
+
+	[Export]
+	public Label WinLabel { get; set; }
+
 	[Signal]
 	public delegate void StartGameEventHandler();
 
@@ -16,6 +21,8 @@ public partial class Hud : CanvasLayer
 	public override void _Ready()
 	{
 		StartButton.Pressed += OnStartButtonPressed;
+		GameOverLabel.Hide();
+		WinLabel.Hide();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

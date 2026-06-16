@@ -1,23 +1,16 @@
 using Godot;
-using System;
 
 public partial class Ball : RigidBody2D
 {
-	private int _speed { get; set; } = 1;
+	private int _speed { get; set; }
+	private Vector2 _direction;
 
 	[Signal]
-	public delegate void IncreaseScoreEventHandler();
+	public delegate void StrikeEventHandler(Brick brick);
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		// В Godot нулевой угол не как у людей и начинается с 3 часов и прибавляется по часовой
-		// Поэтому делаем против часовой (отрицательный), чтобы смотрело вверх
-		var angle = GD.RandRange(-120, -60);
-		float radians = Mathf.DegToRad(angle);
-		var direction = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
-		LinearVelocity = direction * _speed;
-
 		GravityScale = 0;
 		LockRotation = false;
 
@@ -50,17 +43,28 @@ public partial class Ball : RigidBody2D
 		GlobalPosition = startPosition;
 	}
 
-	public void SetSpeed(int speed)
+	public void StartBall(int speed)
 	{
 		_speed = speed;
+
+		// В Godot нулевой угол не как у людей и начинается с 3 часов и прибавляется по часовой
+		// Поэтому делаем против часовой (отрицательный), чтобы смотрело вверх
+		var angle = GD.RandRange(-120, -60);
+		float radians = Mathf.DegToRad(angle);
+		_direction = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
+		LinearVelocity = _direction * _speed;
+	}
+
+	public void StopBall()
+	{
+		LinearVelocity = _direction * 0;
 	}
 
 	private void OnBodyEntered(Node body)
 	{
 		if (body is Brick brick)
 		{
-			brick.Dissapear();
-			EmitSignal(SignalName.IncreaseScore);
+			EmitSignal(SignalName.Strike, brick);
 		}
 	}
 }
