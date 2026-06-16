@@ -6,10 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://crqtvu11e24n8" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dt2q28eu1qwxk" path="res://scenes/ball.tscn" id="4_jyhfs"]
 [ext_resource type="PhysicsMaterial" uid="uid://bw7rh2tnyaxyt" path="res://resources/perfect_bounce.tres" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dllep0cabf83w" path="res://scenes/dead_zone.tscn" id="7_o6xl0"]
 
-[node name="Main" type="Node" unique_id=753195905 node_paths=PackedStringArray("Hud", "Player", "PlayerStartPosition", "Ball", "BallStartPosition")]
+[node name="Main" type="Node" unique_id=753195905 node_paths=PackedStringArray("Hud", "DeadZone", "Player", "PlayerStartPosition", "Ball", "BallStartPosition")]
 script = ExtResource("1_0wfyh")
 Hud = NodePath("HUD")
+DeadZone = NodePath("DeadZone")
 Player = NodePath("Player")
 PlayerStartPosition = NodePath("PlayerStartPosition")
 PlayerSpeed = 1200
@@ -32,3 +34,5 @@ physics_material_override = ExtResource("5_tbgi4")
 
 [node name="BallStartPosition" type="Marker2D" parent="." unique_id=1333415108]
 position = Vector2(960, 1088)
+
+[node name="DeadZone" parent="." unique_id=391139350 instance=ExtResource("7_o6xl0")]
